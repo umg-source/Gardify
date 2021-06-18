@@ -5,23 +5,25 @@ class Navigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: ListView(
-        padding: EdgeInsets.all(8),
-        children: <Widget>[
-          DrawerHeader(
-            child: Container(),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child:
+            Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+          Column(
+            children: [
+              CustomListTile(Icons.home, 'Home'),
+              CustomListTile(Icons.shop_sharp, 'Shop plants'),
+              CustomListTile(Icons.person, 'Ask to an Expert'),
+              CustomListTile(Icons.contact_page, 'Contact us'),
+            ],
           ),
-          CustomListTile(Icons.home, 'Home'),
-          CustomListTile(Icons.shop_sharp, 'Shop plants'),
-          CustomListTile(Icons.person, 'Ask to an Expert'),
-          CustomListTile(Icons.contact_page, 'Contact us'),
           Container(
             height: 70,
             child: Image.asset(
               'assets/images/logo.png',
             ),
           ),
-        ],
+        ]),
       ),
     );
   }
@@ -55,7 +57,7 @@ class CustomListTile extends StatelessWidget {
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
                         text,
-                        style: TextStyle(fontSize: 15),
+                        style: TextStyle(fontSize: 17),
                       ),
                     ),
                   ],
@@ -68,4 +70,10 @@ class CustomListTile extends StatelessWidget {
       ),
     );
   }
+
+  // @override
+  // State<StatefulWidget> createState() {
+  //
+  //   throw UnimplementedError();
+  // }
 }
