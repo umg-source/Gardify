@@ -2,22 +2,25 @@ import 'package:flutter/material.dart';
 
 class Navigation extends StatelessWidget {
   const Navigation({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Drawer(
       child: ListView(
-        padding: EdgeInsets.zero,
+        padding: EdgeInsets.all(8),
         children: <Widget>[
+          DrawerHeader(
+            child: Container(),
+          ),
+          CustomListTile(Icons.home, 'Home'),
+          CustomListTile(Icons.shop_sharp, 'Shop plants'),
+          CustomListTile(Icons.person, 'Ask to an Expert'),
+          CustomListTile(Icons.contact_page, 'Contact us'),
           Container(
             height: 70,
             child: Image.asset(
               'assets/images/logo.png',
             ),
           ),
-          CustomListTile(Icons.home, 'Home'),
-          CustomListTile(Icons.contact_mail, 'Mail'),
-          CustomListTile(Icons.contact_phone, 'Phone'),
         ],
       ),
     );
