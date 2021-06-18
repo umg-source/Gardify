@@ -38,11 +38,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xfffdfffd),
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      drawer: Navigation(),
       body: Stack(
         children: <Widget>[
           Pinned.fromPins(
