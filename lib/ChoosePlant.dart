@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
 import 'Navigation.dart';
 
 class ChoosePlant extends StatelessWidget {

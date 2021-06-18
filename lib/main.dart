@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import './ChoosePlant.dart';
+import 'Contact.dart';
+import 'Navigation.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(Contact());
 }
 
 class MyApp extends StatelessWidget {
@@ -37,6 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
+      drawer: Navigation(),
       body: SingleChildScrollView(
         child: Center(
           child: Column(
