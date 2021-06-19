@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:gardify/Contact.dart';
 
-class Navigation extends StatelessWidget {
+import 'ChoosePlant.dart';
+import 'Shop.dart';
+
+class Navigation extends StatefulWidget {
   const Navigation({Key? key}) : super(key: key);
+
+  @override
+  _NavigationState createState() => _NavigationState();
+}
+
+class _NavigationState extends State<Navigation> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -11,10 +21,10 @@ class Navigation extends StatelessWidget {
             Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
           Column(
             children: [
-              CustomListTile(Icons.home, 'Home'),
-              CustomListTile(Icons.shop_sharp, 'Shop plants'),
-              CustomListTile(Icons.person, 'Ask to an Expert'),
-              CustomListTile(Icons.contact_page, 'Contact us'),
+              CustomListTile(Icons.home, 'Home', 0),
+              CustomListTile(Icons.shop_sharp, 'Shop plants', 1),
+              CustomListTile(Icons.person, 'Ask to an Expert', 2),
+              CustomListTile(Icons.contact_page, 'Contact us', 3),
             ],
           ),
           Container(
@@ -29,12 +39,19 @@ class Navigation extends StatelessWidget {
   }
 }
 
-class CustomListTile extends StatelessWidget {
+// ignore: must_be_immutable
+class CustomListTile extends StatefulWidget {
   IconData icon;
   String text;
-  //Function onTap;
+  int onTp;
 
-  CustomListTile(this.icon, this.text);
+  CustomListTile(this.icon, this.text, this.onTp);
+
+  @override
+  _CustomListTileState createState() => _CustomListTileState();
+}
+
+class _CustomListTileState extends State<CustomListTile> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -44,7 +61,7 @@ class CustomListTile extends StatelessWidget {
             border: Border(bottom: BorderSide(color: Colors.grey.shade400))),
         child: InkWell(
           splashColor: Colors.green[100],
-          onTap: () => {},
+          onTap: () => selectedItem(context, widget.onTp),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
@@ -52,11 +69,11 @@ class CustomListTile extends StatelessWidget {
                 height: 50,
                 child: Row(
                   children: <Widget>[
-                    Icon(icon, color: Colors.green),
+                    Icon(widget.icon, color: Colors.green),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        text,
+                        widget.text,
                         style: TextStyle(fontSize: 17),
                       ),
                     ),
@@ -71,9 +88,30 @@ class CustomListTile extends StatelessWidget {
     );
   }
 
-  // @override
-  // State<StatefulWidget> createState() {
-  //
-  //   throw UnimplementedError();
-  // }
+  selectedItem(BuildContext context, int index) {
+    switch (index) {
+      case 0:
+        Navigator.of(context).pop();
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => ChoosePlant(),
+        ));
+        break;
+      case 1:
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => Shoppage(),
+        ));
+        break;
+      case 2:
+        Navigator.of(context).pop();
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => ChoosePlant(),
+        ));
+        break;
+      case 3:
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => Contact(),
+        ));
+        break;
+    }
+  }
 }

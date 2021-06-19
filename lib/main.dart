@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import './ChoosePlant.dart';
-import 'Contact.dart';
+import 'ChoosePlant.dart';
 import 'Navigation.dart';
+import 'Shop.dart';
 
 void main() {
-  runApp(Contact());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -15,10 +15,9 @@ class MyApp extends StatelessWidget {
       title: 'Gardify',
       theme: ThemeData(
         // This is the theme of your application.
-        //
         primarySwatch: Colors.green,
       ),
-      home: MyHomePage(title: ''),
+      home: Shoppage(),
     );
   }
 }
@@ -92,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Text(
-                  'Hello! I am Crawler and I\'ll help you to take care of your plant.',
+                  'Hello! I am Mr.Crawler and I\'ll help you to take care of your plant.',
                   style: TextStyle(
                     fontFamily: 'Segoe UI',
                     fontSize: 26,
@@ -108,6 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   borderRadius: BorderRadius.circular(45.0),
                   child: ElevatedButton(
                     onPressed: () {
+                      Navigator.of(context).pop();
                       Navigator.push(
                           context,
                           MaterialPageRoute(
