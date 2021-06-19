@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gardify/Contact.dart';
 
 import 'ChoosePlant.dart';
-import 'Shop.dart';
+import 'shop.dart';
 
 class Navigation extends StatefulWidget {
   const Navigation({Key? key}) : super(key: key);

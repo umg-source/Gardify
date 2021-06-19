@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'ChoosePlant.dart';
 import 'Navigation.dart';
-import 'Shop.dart';
+import 'manure.dart';
+import 'shop.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
         // This is the theme of your application.
         primarySwatch: Colors.green,
       ),
-      home: Shoppage(),
+      home: Manure(),
     );
   }
 }
