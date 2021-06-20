@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'LearnPage.dart';
 import 'Navigation.dart';
 
@@ -40,9 +39,10 @@ class ChoosePlant extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () => {
-                    Navigator.of(context).pop(),
                     Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => LearnPage(),
+                      builder: (context) => LearnPage(
+                        plntsrno: 0,
+                      ),
                     ))
                   },
                   child: Column(

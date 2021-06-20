@@ -1,11 +1,49 @@
 import 'package:flutter/material.dart';
-
+import 'package:gardify/soil/soilsucllents.dart';
+import 'Care/caresucclents.dart';
+import 'water/watersucclents.dart';
+import 'Howto/HowtoPlantSucclents.dart';
 import 'Navigation.dart';
 
+// ignore: must_be_immutable
 class LearnPage extends StatelessWidget {
-  LearnPage({
-    Key? key,
-  }) : super(key: key);
+  int plntsrno;
+  LearnPage({Key? key, required this.plntsrno}) : super(key: key);
+
+  nextpge(BuildContext context, int plntsr, int infosrno) {
+    switch (plntsr) {
+      case 0:
+        switch (infosrno) {
+          case 0:
+            Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => HowtoPlantSucclents(),
+            ));
+            break;
+          case 1:
+            Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => Watersucclents(),
+            ));
+            break;
+          case 2:
+            Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => Caresucclents(),
+            ));
+            break;
+          case 3:
+            Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => HowtoPlantSucclents(),
+            ));
+            break;
+          case 4:
+            Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => Soilsucllents(),
+            ));
+            break;
+        }
+        break;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,8 +88,7 @@ class LearnPage extends StatelessWidget {
                         ],
                       ),
                       child: InkWell(
-                        splashColor: Colors.green[100],
-                        onTap: () => {},
+                        onTap: () => nextpge(context, plntsrno, 0),
                         child: Row(
                           children: [
                             Image.asset(
@@ -100,26 +137,29 @@ class LearnPage extends StatelessWidget {
                               ),
                             ],
                           ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Image.asset(
-                                'assets/Mascot/water.png',
-                                height: 125,
-                                width: 110,
-                                fit: BoxFit.cover,
-                              ),
-                              Text(
-                                'Watering Schedule',
-                                style: TextStyle(
-                                  fontFamily: 'Segoe UI',
-                                  fontSize: 25,
-                                  color: const Color(0xff333131),
-                                  fontWeight: FontWeight.w700,
+                          child: InkWell(
+                            onTap: () => nextpge(context, plntsrno, 1),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  'assets/Mascot/water.png',
+                                  height: 125,
+                                  width: 110,
+                                  fit: BoxFit.cover,
                                 ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
+                                Text(
+                                  'Watering Schedule',
+                                  style: TextStyle(
+                                    fontFamily: 'Segoe UI',
+                                    fontSize: 25,
+                                    color: const Color(0xff333131),
+                                    fontWeight: FontWeight.w700,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -150,25 +190,28 @@ class LearnPage extends StatelessWidget {
                               ),
                             ],
                           ),
-                          child: Row(
-                            children: [
-                              Image.asset(
-                                'assets/Mascot/care.png',
-                                height: 125,
-                                width: 125,
-                                fit: BoxFit.cover,
-                              ),
-                              Text(
-                                'Extra Care',
-                                style: TextStyle(
-                                  fontFamily: 'Segoe UI',
-                                  fontSize: 25,
-                                  color: const Color(0xff333131),
-                                  fontWeight: FontWeight.w700,
+                          child: InkWell(
+                            onTap: () => nextpge(context, plntsrno, 2),
+                            child: Row(
+                              children: [
+                                Image.asset(
+                                  'assets/Mascot/care.png',
+                                  height: 125,
+                                  width: 125,
+                                  fit: BoxFit.cover,
                                 ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
+                                Text(
+                                  'Extra Care',
+                                  style: TextStyle(
+                                    fontFamily: 'Segoe UI',
+                                    fontSize: 25,
+                                    color: const Color(0xff333131),
+                                    fontWeight: FontWeight.w700,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -199,25 +242,28 @@ class LearnPage extends StatelessWidget {
                               ),
                             ],
                           ),
-                          child: Row(
-                            children: [
-                              Image.asset(
-                                'assets/Mascot/diymanure.png',
-                                height: 125,
-                                width: 125,
-                                fit: BoxFit.cover,
-                              ),
-                              Text(
-                                'DIY Manure',
-                                style: TextStyle(
-                                  fontFamily: 'Segoe UI',
-                                  fontSize: 25,
-                                  color: const Color(0xff333131),
-                                  fontWeight: FontWeight.w700,
+                          child: InkWell(
+                            onTap: () => nextpge(context, plntsrno, 3),
+                            child: Row(
+                              children: [
+                                Image.asset(
+                                  'assets/Mascot/diymanure.png',
+                                  height: 125,
+                                  width: 125,
+                                  fit: BoxFit.cover,
                                 ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
+                                Text(
+                                  'DIY Manure',
+                                  style: TextStyle(
+                                    fontFamily: 'Segoe UI',
+                                    fontSize: 25,
+                                    color: const Color(0xff333131),
+                                    fontWeight: FontWeight.w700,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -248,25 +294,28 @@ class LearnPage extends StatelessWidget {
                               ),
                             ],
                           ),
-                          child: Row(
-                            children: [
-                              Image.asset(
-                                'assets/Mascot/sun.png',
-                                height: 125,
-                                width: 125,
-                                fit: BoxFit.cover,
-                              ),
-                              Text(
-                                'Sunlight & Soil',
-                                style: TextStyle(
-                                  fontFamily: 'Segoe UI',
-                                  fontSize: 25,
-                                  color: const Color(0xff333131),
-                                  fontWeight: FontWeight.w700,
+                          child: InkWell(
+                            onTap: () => nextpge(context, plntsrno, 4),
+                            child: Row(
+                              children: [
+                                Image.asset(
+                                  'assets/Mascot/sun.png',
+                                  height: 125,
+                                  width: 125,
+                                  fit: BoxFit.cover,
                                 ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
+                                Text(
+                                  'Sunlight & Soil',
+                                  style: TextStyle(
+                                    fontFamily: 'Segoe UI',
+                                    fontSize: 25,
+                                    color: const Color(0xff333131),
+                                    fontWeight: FontWeight.w700,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),

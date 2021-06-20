@@ -92,11 +92,13 @@ class _CustomListTileState extends State<CustomListTile> {
     switch (index) {
       case 0:
         Navigator.of(context).pop();
+        Navigator.of(context).pop();
         Navigator.of(context).push(MaterialPageRoute(
           builder: (context) => ChoosePlant(),
         ));
         break;
       case 1:
+        Navigator.of(context).pop();
         Navigator.of(context).push(MaterialPageRoute(
           builder: (context) => Shoppage(),
         ));
@@ -108,6 +110,7 @@ class _CustomListTileState extends State<CustomListTile> {
         ));
         break;
       case 3:
+        Navigator.of(context).pop();
         Navigator.of(context).push(MaterialPageRoute(
           builder: (context) => Contact(),
         ));
