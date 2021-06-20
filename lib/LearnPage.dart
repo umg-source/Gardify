@@ -50,6 +50,8 @@ class LearnPage extends StatelessWidget {
                         ],
                       ),
                       child: InkWell(
+                        splashColor: Colors.green[100],
+                        onTap: () => {},
                         child: Row(
                           children: [
                             Image.asset(
