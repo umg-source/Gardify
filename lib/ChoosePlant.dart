@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'LearnPage.dart';
 import 'Navigation.dart';
 
 class ChoosePlant extends StatelessWidget {
@@ -37,42 +38,50 @@ class ChoosePlant extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Column(
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(26.0),
-                        color: const Color(0xfff2fedc),
-                        boxShadow: [
-                          BoxShadow(
-                            color: const Color(0x33000000),
-                            offset: Offset(0, 3),
-                            blurRadius: 6,
-                          ),
-                        ],
-                      ),
-                      child: Column(
-                        children: [
-                          Image.asset(
-                            'assets/images/cactus.png',
-                            height: 125,
-                            width: 125,
-                            fit: BoxFit.cover,
-                          ),
-                          Text(
-                            'Succlents',
-                            style: TextStyle(
-                              fontFamily: 'Segoe UI',
-                              fontSize: 22,
-                              color: const Color(0xff333131),
-                              fontWeight: FontWeight.w600,
+                InkWell(
+                  onTap: () => {
+                    Navigator.of(context).pop(),
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => LearnPage(),
+                    ))
+                  },
+                  child: Column(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(26.0),
+                          color: const Color(0xfff2fedc),
+                          boxShadow: [
+                            BoxShadow(
+                              color: const Color(0x33000000),
+                              offset: Offset(0, 3),
+                              blurRadius: 6,
                             ),
-                            textAlign: TextAlign.center,
-                          ),
-                        ],
+                          ],
+                        ),
+                        child: Column(
+                          children: [
+                            Image.asset(
+                              'assets/images/cactus.png',
+                              height: 125,
+                              width: 125,
+                              fit: BoxFit.cover,
+                            ),
+                            Text(
+                              'Succlents',
+                              style: TextStyle(
+                                fontFamily: 'Segoe UI',
+                                fontSize: 22,
+                                color: const Color(0xff333131),
+                                fontWeight: FontWeight.w600,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),

@@ -61,7 +61,7 @@ class ContactPage extends StatelessWidget {
                 ),
                 child: Center(
                   child: Text(
-                    'Team Gradify \n Please Hire Us \n Email us at : \n PM.BaeDilaoYojna@mail.com',
+                    'Team Gradify \n Please Hire Us \n Email us at : \n support@gardify.co',
                     style: TextStyle(
                       fontFamily: 'Segoe UI',
                       fontSize: 19,

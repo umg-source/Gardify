@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'ChoosePlant.dart';
-import 'Navigation.dart';
-import 'manure.dart';
-import 'shop.dart';
+// import 'Navigation.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,7 +16,7 @@ class MyApp extends StatelessWidget {
         // This is the theme of your application.
         primarySwatch: Colors.green,
       ),
-      home: Manure(),
+      home: MyHomePage(title: ''),
     );
   }
 }
@@ -39,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      drawer: Navigation(),
+      // drawer: Navigation(),
       body: SingleChildScrollView(
         child: Center(
           child: Column(

@@ -34,46 +34,44 @@ class LearnPage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Column(
-                    children: [
-                      SizedBox(
-                        width: 350,
-                        height: 80,
-                        child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(26.0),
-                            color: const Color(0xfff2fedc),
-                            boxShadow: [
-                              BoxShadow(
-                                color: const Color(0x33000000),
-                                offset: Offset(0, 3),
-                                blurRadius: 6,
-                              ),
-                            ],
+                  SizedBox(
+                    width: 350,
+                    height: 80,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(26.0),
+                        color: const Color(0xfff2fedc),
+                        boxShadow: [
+                          BoxShadow(
+                            color: const Color(0x33000000),
+                            offset: Offset(0, 3),
+                            blurRadius: 6,
                           ),
-                          child: Row(
-                            children: [
-                              Image.asset(
-                                'assets/Mascot/plant.png',
-                                height: 125,
-                                width: 125,
-                                fit: BoxFit.cover,
+                        ],
+                      ),
+                      child: InkWell(
+                        child: Row(
+                          children: [
+                            Image.asset(
+                              'assets/Mascot/plant.png',
+                              height: 125,
+                              width: 125,
+                              fit: BoxFit.cover,
+                            ),
+                            Text(
+                              'How to Plant?',
+                              style: TextStyle(
+                                fontFamily: 'Segoe UI',
+                                fontSize: 25,
+                                color: const Color(0xff333131),
+                                fontWeight: FontWeight.w700,
                               ),
-                              Text(
-                                'How to Plant?',
-                                style: TextStyle(
-                                  fontFamily: 'Segoe UI',
-                                  fontSize: 25,
-                                  color: const Color(0xff333131),
-                                  fontWeight: FontWeight.w700,
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ],
                         ),
                       ),
-                    ],
+                    ),
                   ),
                 ],
               ),
